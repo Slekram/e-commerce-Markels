@@ -1,0 +1,54 @@
+.header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #24252A;
+    padding: 20px 5%;
+}
+
+li, a, button{
+    text-decoration: none;
+    color: beige;
+}
+
+.divLogo{
+    display: flex;
+}
+
+.logo{
+    animation: App-logo-spin infinite 20s linear;
+}
+
+@keyframes App-logo-spin {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+nav{
+    margin-right: 300px;
+}
+
+nav ul{
+    list-style: none;
+}
+
+nav ul li{
+    display: inline-block;
+    padding: 0 20px;
+}
+
+button{
+    padding: 9px 25px;
+    background-color: rgba(0, 136, 139, 1);
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+}
+
+button:hover{
+    background-color: rgba(0, 136, 139, 0.2);
+}
