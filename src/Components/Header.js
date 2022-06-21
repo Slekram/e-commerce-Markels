@@ -1,6 +1,6 @@
 import './Header.css';
-import carritoLogo from '../Assets/img/cart.svg';
 import logoReact from "../Assets/img/logo.svg"
+import CartWidget from './CartWidget';
 
 function Header() {
   return (
@@ -22,11 +22,7 @@ function Header() {
             </li>
           </ul>
       </nav>
-      <a>
-        <button>
-          <img src={carritoLogo} alt='Carrito'></img>
-        </button>
-      </a>
+      <CartWidget/>
     </header>
   );
 }
