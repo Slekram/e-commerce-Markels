@@ -1,5 +1,5 @@
-import Header from './Components/Header';
-import ItemListContainer from './Components/ItemListContainer';
+import Header from './components/header/Header';
+import ItemListContainer from './components/itemListContainer/ItemListContainer';
 
 function App() {
   return (

@@ -1,6 +1,6 @@
 import './Header.css';
-import logoReact from "../Assets/img/logo.svg"
-import CartWidget from './CartWidget';
+import logoReact from "../../assets/img/logo.svg"
+import CartWidget from '../cartWidget/CartWidget';
 
 function Header() {
   return (
@@ -12,13 +12,13 @@ function Header() {
       <nav>
           <ul className='navUl'>
             <li>
-              <a href='#'>Productos</a>
+              <a href='/'>Productos</a>
             </li>
             <li>
-              <a href='#'>Nosotros</a>
+              <a href='/'>Nosotros</a>
             </li>
             <li>
-              <a href='#'>Contacto</a>
+              <a href='/'>Contacto</a>
             </li>
           </ul>
       </nav>

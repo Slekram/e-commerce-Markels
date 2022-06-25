@@ -1,4 +1,4 @@
-import carritoLogo from '../Assets/img/cart.svg';
+import carritoLogo from '../../assets/img/cart.svg';
 import './CartWidget.css';
 
 const CartWidget = () => {

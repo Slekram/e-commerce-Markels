@@ -1,5 +1,5 @@
 import "./ItemListContainer.css";
-import ItemCount from "./itemCount.js";
+import ItemCount from "../itemCount/itemCount";
 
 
 const ItemListContainer = ({nombre}) => {
