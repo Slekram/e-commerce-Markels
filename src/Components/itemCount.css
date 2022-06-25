@@ -1,0 +1,40 @@
+.botonera{
+    display:flex;
+    flex-direction: column;
+    margin-left: 10px;
+}
+
+.count {
+    display: flex;
+    background-color: antiquewhite;
+    height: fit-content;
+
+}
+
+.count p{
+    width: 100px;
+    border:none;
+    text-align:center;
+    caret-color: transparent;
+    outline:none;
+    font-size: small;
+}
+
+.count button{
+    border:1px solid blue;
+    background:blue;
+    color:white;
+}
+
+.botonera p{
+    text-align: center;
+}
+
+.botonera button{
+    
+}
+
+
+
+
+

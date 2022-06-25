@@ -3,7 +3,7 @@ import './CartWidget.css';
 
 const CartWidget = () => {
     return (
-        <button>
+        <button className='buttonCart'>
           <img src={carritoLogo} alt='Carrito'></img>
         </button>
     )
