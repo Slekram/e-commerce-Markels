@@ -1,0 +1,66 @@
+[
+    {
+        "id":1,
+        "nombre": "Impresora 3D",
+        "marca": "Hellbot",
+        "precio": 47000,
+        "stock": 3,
+        "img": "https://i.ibb.co/DQXwzV5/impresora-3d.webp"
+    },
+    {
+        "id":2,
+        "nombre": "PlayStation 5",
+        "marca": "Sony",
+        "precio": 150000,
+        "stock": 10,
+        "img": "https://i.ibb.co/xzn10Yw/play.webp"
+    },
+    {
+        "id":3,
+        "nombre": "GTX 1660 Super",
+        "marca": "Nvidia",
+        "precio": 90000,
+        "stock": 50,
+        "img": "https://i.ibb.co/z4zpMVL/1660.webp"
+    },
+    {
+        "id":4,
+        "nombre": "Camara DSRL D3500",
+        "marca": "Nikon",
+        "precio": 45000,
+        "stock": 15,
+        "img": "https://i.ibb.co/YcFmn0K/3500.webp"
+    },
+    {
+        "id":5,
+        "nombre": "Filamento PLA impresora 3D 1 kilo",
+        "marca": "Print a lot",
+        "precio": 1500,
+        "stock": 10,
+        "img": "https://i.ibb.co/p1PyZ4L/filamento.jpg"
+    },
+    {
+        "id":6,
+        "nombre": "Panel led Horticultura",
+        "marca": "Samsung",
+        "precio": 80000,
+        "stock": 5,
+        "img": "https://i.ibb.co/HKHqF1M/panel.jpg"
+    },
+    {
+        "id":7,
+        "nombre": "Teclado mecanico",
+        "marca": "Red Dragon",
+        "precio": 10000,
+        "stock": 3,
+        "img": "https://i.ibb.co/FmsZHDF/teclado.jpg"
+    },
+    {
+        "id":8,
+        "nombre": "Arduino Uno",
+        "marca": "Arduino",
+        "precio": 1000,
+        "stock": 10,
+        "img": "https://i.ibb.co/P1nhXhb/arduino.webp"
+    }
+]
