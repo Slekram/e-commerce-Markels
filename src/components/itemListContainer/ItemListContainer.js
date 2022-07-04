@@ -14,7 +14,6 @@ const ItemListContainer = ({nombre}) => {
         },2000)
     },[])
 
-    console.log(productos);
     return (
         <section className="ItemListContainer">
             <h2>Catalogo de Productos</h2>

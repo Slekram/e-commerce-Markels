@@ -1,66 +1,82 @@
 [
     {
         "id":1,
+        "id2": 10,
         "nombre": "Impresora 3D",
         "marca": "Hellbot",
         "precio": 47000,
         "stock": 3,
-        "img": "https://i.ibb.co/DQXwzV5/impresora-3d.webp"
+        "img": "https://i.ibb.co/DQXwzV5/impresora-3d.webp",
+        "descripcion": "Item descripcion"
     },
     {
         "id":2,
+        "id2": 11,
         "nombre": "PlayStation 5",
         "marca": "Sony",
         "precio": 150000,
         "stock": 10,
-        "img": "https://i.ibb.co/xzn10Yw/play.webp"
+        "img": "https://i.ibb.co/xzn10Yw/play.webp",
+        "descripcion": "Item descripcion"
     },
     {
         "id":3,
+        "id2": 12,
         "nombre": "GTX 1660 Super",
         "marca": "Nvidia",
         "precio": 90000,
         "stock": 50,
-        "img": "https://i.ibb.co/z4zpMVL/1660.webp"
+        "img": "https://i.ibb.co/z4zpMVL/1660.webp",
+        "descripcion": "Item descripcion"
     },
     {
         "id":4,
+        "id2": 13,
         "nombre": "Camara DSRL D3500",
         "marca": "Nikon",
         "precio": 45000,
         "stock": 15,
-        "img": "https://i.ibb.co/YcFmn0K/3500.webp"
+        "img": "https://i.ibb.co/YcFmn0K/3500.webp",
+        "descripcion": "Item descripcion"
     },
     {
         "id":5,
+        "id2": 14,
         "nombre": "Filamento PLA impresora 3D 1 kilo",
         "marca": "Print a lot",
         "precio": 1500,
         "stock": 10,
-        "img": "https://i.ibb.co/p1PyZ4L/filamento.jpg"
+        "img": "https://i.ibb.co/p1PyZ4L/filamento.jpg",
+        "descripcion": "Item descripcion"
     },
     {
         "id":6,
+        "id2": 15,
         "nombre": "Panel led Horticultura",
         "marca": "Samsung",
         "precio": 80000,
         "stock": 5,
-        "img": "https://i.ibb.co/HKHqF1M/panel.jpg"
+        "img": "https://i.ibb.co/HKHqF1M/panel.jpg",
+        "descripcion": "Item descripcion"
     },
     {
         "id":7,
+        "id2": 16,
         "nombre": "Teclado mecanico",
         "marca": "Red Dragon",
         "precio": 10000,
         "stock": 3,
-        "img": "https://i.ibb.co/FmsZHDF/teclado.jpg"
+        "img": "https://i.ibb.co/FmsZHDF/teclado.jpg",
+        "descripcion": "Item descripcion"
     },
     {
         "id":8,
+        "id2": 17,
         "nombre": "Arduino Uno",
         "marca": "Arduino",
         "precio": 1000,
         "stock": 10,
-        "img": "https://i.ibb.co/P1nhXhb/arduino.webp"
+        "img": "https://i.ibb.co/P1nhXhb/arduino.webp",
+        "descripcion": "Item descripcion"
     }
 ]
