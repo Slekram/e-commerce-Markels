@@ -1,6 +1,7 @@
 import './Header.css';
 import logoReact from "../../assets/img/logo.svg"
 import CartWidget from '../cartWidget/CartWidget';
+import {Link} from 'react-router-dom';
 
 function Header() {
   return (
@@ -12,13 +13,13 @@ function Header() {
       <nav>
           <ul className='navUl'>
             <li>
-              <a href='/'>Productos</a>
+              <Link to='/home'>Home</Link>
             </li>
             <li>
-              <a href='/'>Nosotros</a>
+              <Link to='/products'>Productos</Link>
             </li>
             <li>
-              <a href='/'>Contacto</a>
+              <Link to='/contact'>Contacto</Link>
             </li>
           </ul>
       </nav>
