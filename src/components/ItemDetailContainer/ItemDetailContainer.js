@@ -9,14 +9,16 @@ const ItemDetailContainer = () => {
             fetch("./data.json")
             .then((resp)=>resp.json())
             .then((data)=>{
-                const dataFetch = data.find((e)=>e.id===2);
+                const dataFetch = data.find((e)=>e.id===1);
                 setDetalle(dataFetch);
             })
         },2000)
     },[])
 
     return (
-        <ItemDetail {...detalle}/>
+        <section style={{backgroundColor: "grey", margin: "0px"}}>
+            <ItemDetail {...detalle}/>
+        </section>
     )
 }
 
