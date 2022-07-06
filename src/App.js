@@ -1,8 +1,9 @@
 import { Routes, Route } from 'react-router-dom';
 import Header from './components/header/Header';
-import ItemListContainer from './components/ItemListContainer/ItemListContainer';
-import ItemDetailContainer from './components/ItemDetailContainer/ItemDetailContainer';
 import Home from './pages/Home/Home';
+import Products from './pages/Products/Products';
+import Detail from './pages/Detail/Detail';
+
 
 function App() {
   return (
@@ -10,8 +11,9 @@ function App() {
       <Header/>
       <Routes>
         <Route path='/home' element={<Home></Home>}></Route>
+        <Route path='/products' element={<Products></Products>}></Route>
+        <Route path='/detail' element={<Detail></Detail>}></Route>
       </Routes>
-      <ItemDetailContainer/>
     </div>
   );
 }

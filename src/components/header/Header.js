@@ -19,7 +19,7 @@ function Header() {
               <Link to='/products'>Productos</Link>
             </li>
             <li>
-              <Link to='/contact'>Contacto</Link>
+              <Link to='/detail'>Detalle</Link>
             </li>
           </ul>
       </nav>

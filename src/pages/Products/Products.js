@@ -1,10 +1,10 @@
 import ItemListContainer from "../../components/ItemListContainer/ItemListContainer";
 
 
-const Home = () => {
+const Products = () => {
     return (
-        <h2>Bienvenido al mundo de Maxi</h2>
+        <ItemListContainer nombre="USUARIO"/>
     )
 }
 
-export default Home;
+export default Products;
