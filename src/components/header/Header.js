@@ -16,16 +16,16 @@ function Header() {
               <Link to='/'>Home</Link>
             </li>
             <li>
-              <Link to='/products'>Productos</Link>
+              <Link to='/products' key={"products"}>Productos</Link>
             </li>
             <li>
-              <Link to='/categoria/A'>A</Link>
+              <Link to='/categoria/A' key={"A"}>A</Link>
             </li>
             <li>
-              <Link to='/categoria/B'>B</Link>
+              <Link to='/categoria/B' key={"B"}>B</Link>
             </li>
             <li>
-              <Link to='/categoria/C'>C</Link>
+              <Link to='/categoria/C' key={"C"}>C</Link>
             </li>
           </ul>
       </nav>

@@ -1,6 +1,6 @@
 [
     {
-        "id":1,
+        "id":"1",
         "categoria": "C",
         "nombre": "Impresora 3D",
         "marca": "Hellbot",
@@ -10,7 +10,7 @@
         "descripcion": "Item descripcion"
     },
     {
-        "id":2,
+        "id":"2",
         "categoria": "B",
         "nombre": "PlayStation 5",
         "marca": "Sony",
@@ -20,7 +20,7 @@
         "descripcion": "Item descripcion"
     },
     {
-        "id":3,
+        "id":"3",
         "categoria": "B",
         "nombre": "GTX 1660 Super",
         "marca": "Nvidia",
@@ -30,7 +30,7 @@
         "descripcion": "Item descripcion"
     },
     {
-        "id":4,
+        "id":"4",
         "categoria": "A",
         "nombre": "Camara DSRL D3500",
         "marca": "Nikon",
@@ -40,7 +40,7 @@
         "descripcion": "Item descripcion"
     },
     {
-        "id":5,
+        "id":"5",
         "categoria": "C",
         "nombre": "Filamento PLA impresora 3D 1 kilo",
         "marca": "Print a lot",
@@ -50,7 +50,7 @@
         "descripcion": "Item descripcion"
     },
     {
-        "id":6,
+        "id":"6",
         "categoria": "A",
         "nombre": "Panel led Horticultura",
         "marca": "Samsung",
@@ -60,7 +60,7 @@
         "descripcion": "Item descripcion"
     },
     {
-        "id":7,
+        "id":"7",
         "categoria": "B",
         "nombre": "Teclado mecanico",
         "marca": "Red Dragon",
@@ -70,7 +70,7 @@
         "descripcion": "Item descripcion"
     },
     {
-        "id":8,
+        "id":"8",
         "categoria": "A",
         "nombre": "Arduino Uno",
         "marca": "Arduino",
