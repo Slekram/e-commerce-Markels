@@ -1,8 +1,7 @@
 import { Routes, Route } from 'react-router-dom';
 import Header from './components/header/Header';
 import Home from './pages/Home/Home';
-import Products from './pages/Products/Products';
-import Detail from './pages/Detail/Detail';
+import ItemListContainer from './components/ItemListContainer/ItemListContainer';
 
 
 function App() {
@@ -10,9 +9,9 @@ function App() {
     <div className="App">
       <Header/>
       <Routes>
-        <Route path='/home' element={<Home></Home>}></Route>
-        <Route path='/products' element={<Products></Products>}></Route>
-        <Route path='/detail' element={<Detail></Detail>}></Route>
+        <Route path='/' element={<Home></Home>}></Route>
+        <Route path='/products' element={<ItemListContainer nombre={"USUARIO"}/>}></Route>
+        <Route path='/categoria/:idcategoria' element={<ItemListContainer nombre={"FILTRADO"}/>}></Route>
       </Routes>
     </div>
   );

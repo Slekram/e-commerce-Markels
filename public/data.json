@@ -1,7 +1,7 @@
 [
     {
         "id":1,
-        "id2": 10,
+        "categoria": "C",
         "nombre": "Impresora 3D",
         "marca": "Hellbot",
         "precio": 47000,
@@ -11,7 +11,7 @@
     },
     {
         "id":2,
-        "id2": 11,
+        "categoria": "B",
         "nombre": "PlayStation 5",
         "marca": "Sony",
         "precio": 150000,
@@ -21,7 +21,7 @@
     },
     {
         "id":3,
-        "id2": 12,
+        "categoria": "B",
         "nombre": "GTX 1660 Super",
         "marca": "Nvidia",
         "precio": 90000,
@@ -31,7 +31,7 @@
     },
     {
         "id":4,
-        "id2": 13,
+        "categoria": "A",
         "nombre": "Camara DSRL D3500",
         "marca": "Nikon",
         "precio": 45000,
@@ -41,7 +41,7 @@
     },
     {
         "id":5,
-        "id2": 14,
+        "categoria": "C",
         "nombre": "Filamento PLA impresora 3D 1 kilo",
         "marca": "Print a lot",
         "precio": 1500,
@@ -51,7 +51,7 @@
     },
     {
         "id":6,
-        "id2": 15,
+        "categoria": "A",
         "nombre": "Panel led Horticultura",
         "marca": "Samsung",
         "precio": 80000,
@@ -61,7 +61,7 @@
     },
     {
         "id":7,
-        "id2": 16,
+        "categoria": "B",
         "nombre": "Teclado mecanico",
         "marca": "Red Dragon",
         "precio": 10000,
@@ -71,7 +71,7 @@
     },
     {
         "id":8,
-        "id2": 17,
+        "categoria": "A",
         "nombre": "Arduino Uno",
         "marca": "Arduino",
         "precio": 1000,

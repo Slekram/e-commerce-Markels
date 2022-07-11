@@ -3,6 +3,7 @@ import ItemDetail from "../ItemDetail/ItemDetail";
 
 const ItemDetailContainer = () => {
     const [detalle, setDetalle] = useState([]);
+    const [isLoading, setIsLoading] = useState([true])
 
     useEffect(()=>{
         setTimeout(()=>{
@@ -12,13 +13,17 @@ const ItemDetailContainer = () => {
                 const dataFetch = data.find((e)=>e.id===1);
                 setDetalle(dataFetch);
             })
+            .finally(()=>setIsLoading(false))
         },2000)
     },[])
 
     return (
-        <section style={{backgroundColor: "grey", margin: "0px"}}>
-            <ItemDetail {...detalle}/>
-        </section>
+        isLoading ? <h2>CARGANDO...</h2>:
+        (
+            <section style={{backgroundColor: "grey", margin: "0px"}}>
+                <ItemDetail {...detalle}/>
+            </section>
+        )
     )
 }
 

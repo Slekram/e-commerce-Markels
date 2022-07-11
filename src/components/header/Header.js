@@ -13,13 +13,19 @@ function Header() {
       <nav>
           <ul className='navUl'>
             <li>
-              <Link to='/home'>Home</Link>
+              <Link to='/'>Home</Link>
             </li>
             <li>
               <Link to='/products'>Productos</Link>
             </li>
             <li>
-              <Link to='/detail'>Detalle</Link>
+              <Link to='/categoria/A'>A</Link>
+            </li>
+            <li>
+              <Link to='/categoria/B'>B</Link>
+            </li>
+            <li>
+              <Link to='/categoria/C'>C</Link>
             </li>
           </ul>
       </nav>
