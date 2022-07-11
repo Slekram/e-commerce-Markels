@@ -1,3 +1,4 @@
+import { data } from "../../data/data";
 import { useEffect, useState } from "react";
 import ItemDetail from "../ItemDetail/ItemDetail";
 import { useParams } from "react-router-dom";
@@ -8,16 +9,20 @@ const ItemDetailContainer = () => {
     const {iditem} = useParams();
 
     useEffect(()=>{
-        setTimeout(()=>{
-            fetch("./data.json")
-            .then((resp)=>resp.json())
-            .then((data)=>{
-                const dataFetch = data.find((e)=>e.id===iditem);
-                setDetalle(dataFetch);
+            const getItem = new Promise ((resolve)=>{
+                setTimeout(()=>{
+                    const dataFetch = data.find((e)=>e.id===iditem);
+                    resolve(dataFetch);
+                },2000)
             })
-            .finally(()=>setIsLoading(false))
-        },2000)
-    },[detalle])
+
+            getItem.then((res)=>{
+                setDetalle(res);
+                setIsLoading(false);
+            })
+
+    },[])
+
 
     return (
         isLoading ? <h2>CARGANDO...</h2>:
