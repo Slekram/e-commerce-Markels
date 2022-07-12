@@ -1,15 +1,36 @@
+import { useState } from "react";
+import ItemCount from "../itemCount/itemCount";
 import "./ItemDetail.css"
+import { Link } from "react-router-dom";
 
 
-const ItemDetail = ({nombre, img, precio, descripcion}) => {
+const ItemDetail = ({nombre, img, precio, descripcion, id}) => {
+    
+    const [contadorCarrito, setContadorCarrito] = useState(0)
+
+    const saveDataHandler = (newCantidadCarrito) => {
+        const carritoData = {
+            id: {id},
+            producto: {nombre},
+            cantidad: {newCantidadCarrito}
+        }
+        console.log(carritoData);
+        setContadorCarrito(newCantidadCarrito);
+    }
+    
     return (
-
+        <>
             <div className="gridItemDetail">
                 <div className="div1"><img src={img} alt={nombre}></img></div>
                 <div className="div2"><h2>{nombre}</h2></div>
                 <div className="div3"><h3>{precio}</h3></div>
                 <div className="div4"><p>{descripcion}</p></div>
+                <span>En carrito: {contadorCarrito}</span>
+                <ItemCount onSaveData={saveDataHandler}/>
             </div>
+            <Link to="/cart"><button className="finalizarCompra">Finalizar Compra</button></Link>
+        </>
+
 
     )
 }

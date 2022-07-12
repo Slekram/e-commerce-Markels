@@ -1,7 +1,7 @@
 import "./itemCount.css"
 import { useState } from "react";
 
-const ItemCount = () => {
+const ItemCount = (props) => {
     const [count, setCount] = useState(0);
     const [stock, setStock] = useState(10);
     const sumar = () => {
@@ -23,6 +23,8 @@ const ItemCount = () => {
     const onAdd = () => {
         if(count>0){
             alert (`Usted agrego al carrito ${count} unidades`)
+            let newCantidadCarrito = count;
+            props.onSaveData(newCantidadCarrito);
             setCount(0);
         }else {
             alert ("Su carrito esta vacio")
