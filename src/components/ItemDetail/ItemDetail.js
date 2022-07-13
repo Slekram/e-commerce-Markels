@@ -2,20 +2,22 @@ import { useState } from "react";
 import ItemCount from "../itemCount/itemCount";
 import "./ItemDetail.css"
 import { Link } from "react-router-dom";
-
+import { useCartContext } from "../../contexts/cart-context";
 
 const ItemDetail = ({nombre, img, precio, descripcion, id}) => {
     
     const [contadorCarrito, setContadorCarrito] = useState(0)
 
-    const saveDataHandler = (newCantidadCarrito) => {
+    const cartCtx = useCartContext();
+
+    const saveDataHandler = (count) => {
         const carritoData = {
-            id: {id},
-            producto: {nombre},
-            cantidad: {newCantidadCarrito}
+            id: `${id}`, 
+            producto: `${nombre}`,
+            cantidad: count
         }
-        console.log(carritoData);
-        setContadorCarrito(newCantidadCarrito);
+        setContadorCarrito(count);
+        cartCtx.addItem(carritoData);
     }
     
     return (

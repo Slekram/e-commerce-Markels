@@ -1,9 +1,13 @@
 import "./itemCount.css"
 import { useState } from "react";
+import { useCartContext } from "../../contexts/cart-context";
 
 const ItemCount = (props) => {
     const [count, setCount] = useState(0);
     const [stock, setStock] = useState(10);
+
+    const cart = useCartContext();
+
     const sumar = () => {
         if(stock>0){
             setCount(count + 1);
@@ -23,8 +27,8 @@ const ItemCount = (props) => {
     const onAdd = () => {
         if(count>0){
             alert (`Usted agrego al carrito ${count} unidades`)
-            let newCantidadCarrito = count;
-            props.onSaveData(newCantidadCarrito);
+            console.log(count);
+            props.onSaveData(count);
             setCount(0);
         }else {
             alert ("Su carrito esta vacio")
