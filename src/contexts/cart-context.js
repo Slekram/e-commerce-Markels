@@ -9,46 +9,65 @@ const estadoInicial = [];
 export const CartProvider = ({children}) => {
 
     const [cart, setCart] = useState(estadoInicial);
+    const [contadorWidget, setContadorWidget] = useState(0);
+    const [isCartVacio, setIsCartVacio] = useState(true)
 
     const addItem = (item) => {
         const idBuscado = item.id;
-        const cantidadAgregada = item.cantidad; 
-        console.log(idBuscado);
+        const cantidadAgregada = item.cantidad;
         
         let buscarCarrito = cart.some((el)=>el.id === idBuscado);
-        console.log(buscarCarrito);
         
         if (buscarCarrito) {
             let indexCarrito = cart.findIndex((el)=>el.id===idBuscado);
-            console.log(indexCarrito);
             cart[indexCarrito].cantidad = cart[indexCarrito].cantidad + cantidadAgregada;
         }else {
             cart.push(item);
             setCart(cart);
+            setIsCartVacio(false);
         }
-        console.log(cart);
+        setContadorWidget(contadorWidget + cantidadAgregada);
     }
 
-    const removeItem = (idItem, cantidadRemover) => {
-        const indexRemover = cart.findIndex((el)=>el.id === idItem);
-        if(cart[indexRemover].cantidad < cantidadRemover){
-            alert("Usted no tiene esa cantidad de items en el carrito. Ingrese una cantidad correcta")
+    const removeItem = (idItem) => {
+        if (cart.length > 0){
+            const newCarrito = [...cart].filter((e)=>e.id !== idItem);
+            console.log(newCarrito);
+            setCart(newCarrito);
+            console.log(cart);
+            getCantidadTotal();
         }else{
-            if(cart[indexRemover].cantidad == cantidadRemover){
-                setCart (estadoInicial);
-            }else{
-                cart[indexRemover].cantidad = cart[indexRemover].cantidad - cantidadRemover;
-            }
+            setIsCartVacio(true);
+            setContadorWidget(0);
         }
-        
     }
 
     const clearItem = () => {
-        setCart (estadoInicial);
+        setCart ([]);
+        setContadorWidget(0);
+        console.log(cart);
+        setIsCartVacio(true);
+    }
+
+    const getTotal = () => {
+        let subtotal = 0;
+        let total = 0;
+        cart.forEach((e)=>{
+            subtotal = parseInt(e.subtotal);
+            total = total + subtotal;
+        })
+        console.log(total);
+        return total;
+    }
+
+    const getCantidadTotal = () => {
+        const cantidadTotal = cart.reduce((acc,el)=>acc + el.cantidad);
+        console.log(cantidadTotal);
+        setContadorWidget(cantidadTotal);
     }
 
     return (
-        <CartContext.Provider value={{cart, addItem, clearItem, removeItem}}>
+        <CartContext.Provider value={{cart, isCartVacio, contadorWidget, addItem, clearItem, removeItem, getTotal}}>
             {children}
         </CartContext.Provider>
 

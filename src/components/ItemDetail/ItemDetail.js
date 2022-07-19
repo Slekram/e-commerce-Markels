@@ -14,7 +14,10 @@ const ItemDetail = ({nombre, img, precio, descripcion, id}) => {
         const carritoData = {
             id: `${id}`, 
             producto: `${nombre}`,
-            cantidad: count
+            cantidad: count,
+            precio: `${precio}`,
+            img: `${img}`,
+            subtotal: `${precio*count}`
         }
         setContadorCarrito(count);
         cartCtx.addItem(carritoData);

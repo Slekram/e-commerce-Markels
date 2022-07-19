@@ -2,11 +2,10 @@ import "./itemCount.css"
 import { useState } from "react";
 import { useCartContext } from "../../contexts/cart-context";
 
+
 const ItemCount = (props) => {
     const [count, setCount] = useState(0);
     const [stock, setStock] = useState(10);
-
-    const cart = useCartContext();
 
     const sumar = () => {
         if(stock>0){
