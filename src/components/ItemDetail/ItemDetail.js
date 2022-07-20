@@ -4,7 +4,7 @@ import "./ItemDetail.css"
 import { Link } from "react-router-dom";
 import { useCartContext } from "../../contexts/cart-context";
 
-const ItemDetail = ({nombre, img, precio, descripcion, id}) => {
+const ItemDetail = ({producto, img, precio, descripcion, id}) => {
     
     const [contadorCarrito, setContadorCarrito] = useState(0)
 
@@ -13,7 +13,7 @@ const ItemDetail = ({nombre, img, precio, descripcion, id}) => {
     const saveDataHandler = (count) => {
         const carritoData = {
             id: `${id}`, 
-            producto: `${nombre}`,
+            producto: `${producto}`,
             cantidad: count,
             precio: `${precio}`,
             img: `${img}`,
@@ -26,8 +26,8 @@ const ItemDetail = ({nombre, img, precio, descripcion, id}) => {
     return (
         <>
             <div className="gridItemDetail">
-                <div className="div1"><img src={img} alt={nombre}></img></div>
-                <div className="div2"><h2>{nombre}</h2></div>
+                <div className="div1"><img src={img} alt={producto}></img></div>
+                <div className="div2"><h2>{producto}</h2></div>
                 <div className="div3"><h3>{precio}</h3></div>
                 <div className="div4"><p>{descripcion}</p></div>
                 <span>En carrito: {contadorCarrito}</span>

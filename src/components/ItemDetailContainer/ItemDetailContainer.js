@@ -2,6 +2,7 @@ import { data } from "../../data/data";
 import { useEffect, useState } from "react";
 import ItemDetail from "../ItemDetail/ItemDetail";
 import { useParams } from "react-router-dom";
+import { getItem } from "../../services/Firestore";
 
 const ItemDetailContainer = () => {
     const [detalle, setDetalle] = useState([]);
@@ -9,26 +10,28 @@ const ItemDetailContainer = () => {
     const {iditem} = useParams();
 
     useEffect(()=>{
-            const getItem = new Promise ((resolve)=>{
-                setTimeout(()=>{
-                    const dataFetch = data.find((e)=>e.id===iditem);
-                    resolve(dataFetch);
-                },2000)
-            })
+            
+            // const getItem = new Promise ((resolve)=>{
+            //     setTimeout(()=>{
+            //         const dataFetch = data.find((e)=>e.id===iditem);
+            //         resolve(dataFetch);
+            //     },2000)
+            // })
 
-            getItem.then((res)=>{
-                setDetalle(res);
-                setIsLoading(false);
-            })
+        getItem(iditem).then((res)=>{
+            console.log(res);
+            setDetalle(res);
+            setIsLoading(false);
+        })
 
     },[])
-
 
     return (
         isLoading ? <h2>CARGANDO...</h2>:
         (
             <section style={{backgroundColor: "grey", margin: "0px"}}>
-                <ItemDetail {...detalle}/>
+                {console.log(detalle)}
+                {detalle.map(i =><ItemDetail  key={i.id} producto={i.producto} img={i.img} precio={i.precio} descripcion={i.descripcion} id={i.id}/>)}
             </section>
         )
     )
