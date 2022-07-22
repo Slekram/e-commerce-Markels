@@ -7,6 +7,7 @@ const CartItem = ({producto, cantidad, id, img, precio, subtotal}) => {
 
     const remover = (id) =>{
         cartCtx.removeItem(id)
+        cartCtx.setearContador();
     }
 
     return (

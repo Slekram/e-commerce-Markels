@@ -2,7 +2,6 @@ import "./ItemListContainer.css";
 import ItemList from "../itemList/ItemList.js";
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-// import {data } from "../../data/data";
 import { getProducts } from "../../services/Firestore";
 
 const ItemListContainer = ({nombre}) => {
@@ -41,7 +40,6 @@ const ItemListContainer = ({nombre}) => {
             <section className="ItemListContainer">
                 <h2>Catalogo de Productos</h2>
                 <p>Bienvenido {nombre}, este es nuestro catalogo actual de productos</p>
-                {console.log(productos)}
                 <ItemList
                     productos={productos}
                 />

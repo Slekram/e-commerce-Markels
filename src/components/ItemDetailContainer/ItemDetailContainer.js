@@ -1,4 +1,3 @@
-import { data } from "../../data/data";
 import { useEffect, useState } from "react";
 import ItemDetail from "../ItemDetail/ItemDetail";
 import { useParams } from "react-router-dom";
@@ -19,7 +18,6 @@ const ItemDetailContainer = () => {
             // })
 
         getItem(iditem).then((res)=>{
-            console.log(res);
             setDetalle(res);
             setIsLoading(false);
         })
@@ -30,7 +28,6 @@ const ItemDetailContainer = () => {
         isLoading ? <h2>CARGANDO...</h2>:
         (
             <section style={{backgroundColor: "grey", margin: "0px"}}>
-                {console.log(detalle)}
                 {detalle.map(i =><ItemDetail  key={i.id} producto={i.producto} img={i.img} precio={i.precio} descripcion={i.descripcion} id={i.id}/>)}
             </section>
         )

@@ -21,8 +21,13 @@ const ItemDetail = ({producto, img, precio, descripcion, id}) => {
         }
         setContadorCarrito(count);
         cartCtx.addItem(carritoData);
+        cartCtx.setearContador();
     }
     
+    const modificarCartWidget = () => {
+        
+    }
+
     return (
         <>
             <div className="gridItemDetail">
@@ -30,7 +35,7 @@ const ItemDetail = ({producto, img, precio, descripcion, id}) => {
                 <div className="div2"><h2>{producto}</h2></div>
                 <div className="div3"><h3>{precio}</h3></div>
                 <div className="div4"><p>{descripcion}</p></div>
-                <span>En carrito: {contadorCarrito}</span>
+                <span onChange={modificarCartWidget}>En carrito: {contadorCarrito}</span>
                 <ItemCount onSaveData={saveDataHandler}/>
             </div>
             <Link to="/cart"><button className="finalizarCompra">Finalizar Compra</button></Link>

@@ -10,8 +10,6 @@ const Cart = () => {
         cartCtx.clearItem()
     }
 
-    console.log(cartCtx.isCartVacio);
-
     return (
         cartCtx.isCartVacio ? (<Link to="/"><h2 style={{color: "black"}}>El carrito se encuentra vacio</h2> <button>Volver a catalogo</button></Link>) :
         (

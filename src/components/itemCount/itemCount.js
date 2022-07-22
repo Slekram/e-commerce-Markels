@@ -1,6 +1,5 @@
 import "./itemCount.css"
 import { useState } from "react";
-import { useCartContext } from "../../contexts/cart-context";
 
 
 const ItemCount = (props) => {
@@ -14,7 +13,6 @@ const ItemCount = (props) => {
         }else{
             alert("No hay mas stock de este producto")
         }
-        
     }
     const restar = () => {
         if(count>0){
@@ -26,7 +24,6 @@ const ItemCount = (props) => {
     const onAdd = () => {
         if(count>0){
             alert (`Usted agrego al carrito ${count} unidades`)
-            console.log(count);
             props.onSaveData(count);
             setCount(0);
         }else {
@@ -43,7 +40,7 @@ const ItemCount = (props) => {
                 <button onClick={sumar} className="buttonAdd">+</button>
             </div>
             <p>Stock: {stock}</p>
-            <button onClick={onAdd}>Agregar al carrito</button>
+            <button onClick={onAdd} >Agregar al carrito</button>
         </div>
     )
 }

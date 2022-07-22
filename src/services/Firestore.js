@@ -1,6 +1,6 @@
 
 import { initializeApp } from "firebase/app";
-import {getFirestore, getDocs, collection, getDoc, doc, query, where, limit} from "firebase/firestore"
+import {getFirestore, getDocs, collection, query, where, limit} from "firebase/firestore"
 const firebaseConfig = {
     apiKey: "AIzaSyCvEVSYqswsF6BiynP7PCA4_LoV84CMUsM",
     authDomain: "el-mundo-de-maxi.firebaseapp.com",
@@ -39,7 +39,5 @@ export async function getItem (id) {
     })
     return(dataProducts);
 }
-
-console.log(getItem("1"));
 
 export default db;

@@ -1,4 +1,4 @@
-import {createContext, useContext, useState} from "react";
+import {createContext, useContext, useEffect, useState} from "react";
 
 export const CartContext = createContext();
 
@@ -9,8 +9,10 @@ const estadoInicial = [];
 export const CartProvider = ({children}) => {
 
     const [cart, setCart] = useState(estadoInicial);
-    const [contadorWidget, setContadorWidget] = useState(0);
-    const [isCartVacio, setIsCartVacio] = useState(true)
+    const [contador, setContador] = useState(0);
+    const [isCartVacio, setIsCartVacio] = useState(true);
+    
+
 
     const addItem = (item) => {
         const idBuscado = item.id;
@@ -21,31 +23,26 @@ export const CartProvider = ({children}) => {
         if (buscarCarrito) {
             let indexCarrito = cart.findIndex((el)=>el.id===idBuscado);
             cart[indexCarrito].cantidad = cart[indexCarrito].cantidad + cantidadAgregada;
+            console.log(cart);
+            console.log("estoy modificando la cantidad del carrito");
+            setContador(contador + cantidadAgregada);
         }else {
             cart.push(item);
             setCart(cart);
+            console.log(cart);
+            console.log("estoy seteando el carrito por primera vez");
             setIsCartVacio(false);
         }
-        setContadorWidget(contadorWidget + cantidadAgregada);
     }
 
     const removeItem = (idItem) => {
-        if (cart.length > 0){
-            const newCarrito = [...cart].filter((e)=>e.id !== idItem);
-            console.log(newCarrito);
-            setCart(newCarrito);
-            console.log(cart);
-            getCantidadTotal();
-        }else{
-            setIsCartVacio(true);
-            setContadorWidget(0);
-        }
+        let findIndexCarrito = cart.findIndex((el) => el.id === idItem);
+        cart.splice(findIndexCarrito, 1);
+        setCart(cart);
     }
 
     const clearItem = () => {
         setCart ([]);
-        setContadorWidget(0);
-        console.log(cart);
         setIsCartVacio(true);
     }
 
@@ -56,18 +53,25 @@ export const CartProvider = ({children}) => {
             subtotal = parseInt(e.subtotal);
             total = total + subtotal;
         })
-        console.log(total);
         return total;
     }
-
-    const getCantidadTotal = () => {
-        const cantidadTotal = cart.reduce((acc,el)=>acc + el.cantidad);
-        console.log(cantidadTotal);
-        setContadorWidget(cantidadTotal);
+    
+    const setearContador = () => {
+        
+        if (cart.length>0) {
+            let cartReduce= cart.reduce((acc, el) => acc + el.cantidad, 0);
+            setContador(cartReduce);
+            console.log("estoy seteando el contador en un valor nuevo");
+            console.log(contador);
+        }else {
+            setContador(0);
+            console.log("estoy seteando el contador en 0");
+            console.log(contador);
+        }
     }
 
     return (
-        <CartContext.Provider value={{cart, isCartVacio, contadorWidget, addItem, clearItem, removeItem, getTotal}}>
+        <CartContext.Provider value={{cart, isCartVacio, contador, setearContador, addItem, clearItem, removeItem, getTotal}}>
             {children}
         </CartContext.Provider>
 
