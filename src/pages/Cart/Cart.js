@@ -24,7 +24,7 @@ const Cart = () => {
             buyer: {name: {name}, telefono: {telefono}, direccion: {direccion}},
             items: {carrito},
             total: {total},
-            date: new Date().toISOString(),
+            date: `${new Date().toLocaleDateString()}, ${new Date().getHours()}:${new Date().getMinutes()}Hs`
 
         }
         
