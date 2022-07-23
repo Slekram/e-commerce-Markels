@@ -1,6 +1,6 @@
 
 import { initializeApp } from "firebase/app";
-import {getFirestore, getDocs, collection, query, where, limit} from "firebase/firestore"
+import {getFirestore, getDocs, collection, query, where, limit, addDoc} from "firebase/firestore"
 const firebaseConfig = {
     apiKey: "AIzaSyCvEVSYqswsF6BiynP7PCA4_LoV84CMUsM",
     authDomain: "el-mundo-de-maxi.firebaseapp.com",
@@ -39,5 +39,11 @@ export async function getItem (id) {
     })
     return(dataProducts);
 }
+
+export const getOrden = (carrito) => {
+    const ordenesCollection = collection(db, "ordenes");
+    addDoc(ordenesCollection, carrito).then(({id})=>alert(`Su numero de orden es ${id}`));
+}
+
 
 export default db;
