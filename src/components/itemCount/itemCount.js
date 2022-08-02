@@ -1,5 +1,7 @@
 import "./ItemCount.css"
+import Swal from "sweetalert2";
 import { useState } from "react";
+
 
 
 const ItemCount = (props) => {
@@ -11,7 +13,12 @@ const ItemCount = (props) => {
             setCount(count + 1);
             setStock(stock - 1);
         }else{
-            alert("No hay mas stock de este producto")
+            Swal.fire({
+                title: 'Error!',
+                text: 'No hay mas stock de este producto',
+                icon: 'error',
+                confirmButtonText: 'Ok'
+            })
         }
     }
     const restar = () => {
@@ -23,13 +30,22 @@ const ItemCount = (props) => {
 
     const onAdd = () => {
         if(count>0){
-            alert (`Usted agrego al carrito ${count} unidades`)
+            Swal.fire({
+                title: 'Felicitaciones!',
+                text: `Usted agrego al carrito ${count} unidades`,
+                icon: 'success',
+                confirmButtonText: 'Ok'
+            })
             props.onSaveData(count);
             setCount(0);
         }else {
-            alert ("Su carrito esta vacio")
+            Swal.fire({
+                title: 'Error!',
+                text: 'Su carrito esta vacio',
+                icon: 'error',
+                confirmButtonText: 'Ok'
+            })
         }
-        
     }
 
     return(
