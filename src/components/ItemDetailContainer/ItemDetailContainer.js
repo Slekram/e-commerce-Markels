@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import ItemDetail from "../ItemDetail/ItemDetail";
 import { useParams } from "react-router-dom";
-import { getItem } from "../../services/Firestore";
+import { getItem } from "../../services/firestore";
 
 const ItemDetailContainer = () => {
     const [detalle, setDetalle] = useState([]);
@@ -9,13 +9,6 @@ const ItemDetailContainer = () => {
     const {iditem} = useParams();
 
     useEffect(()=>{
-            
-            // const getItem = new Promise ((resolve)=>{
-            //     setTimeout(()=>{
-            //         const dataFetch = data.find((e)=>e.id===iditem);
-            //         resolve(dataFetch);
-            //     },2000)
-            // })
 
         getItem(iditem).then((res)=>{
             setDetalle(res);

@@ -1,4 +1,4 @@
-.gridItemDetail{
+.grid-item-detail{
     background-color: black;
     display: grid;
     grid-template-columns: 500px 300px;
@@ -20,18 +20,16 @@
 
 
 
-.div1 { grid-area: img;
-      
-}
-.div2 { grid-area: titulo; }
-.div3 { grid-area: precio; }
-.div4 { grid-area: descripcion; }
+.div1 { grid-area: img;}
+.div2 { grid-area: titulo;}
+.div3 { grid-area: precio;}
+.div4 { grid-area: descripcion;}
 
 .div1 img{
     width: 300px;
     height: 250px;
 }
 
-.finalizarCompra {
+.finalizar-compra {
     
 }

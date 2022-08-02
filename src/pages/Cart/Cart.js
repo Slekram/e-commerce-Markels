@@ -1,7 +1,7 @@
 import { useCartContext } from "../../contexts/cart-context";
 import CartItem from "../../components/CartItem/CartItem";
 import { Link } from 'react-router-dom';
-import { getOrden } from "../../services/Firestore";
+import { setOrden } from "../../services/firestore";
 
 const Cart = () => {
 
@@ -28,7 +28,7 @@ const Cart = () => {
 
         }
         
-        getOrden(orden);
+        setOrden(orden);
         cartCtx.clearItem();
     }
 

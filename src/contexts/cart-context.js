@@ -12,6 +12,7 @@ export const CartProvider = ({children}) => {
     const [contador, setContador] = useState(0);
     const [isCartVacio, setIsCartVacio] = useState(true);
     
+    
 
 
     const addItem = (item) => {
@@ -22,15 +23,11 @@ export const CartProvider = ({children}) => {
         
         if (buscarCarrito) {
             let indexCarrito = cart.findIndex((el)=>el.id===idBuscado);
-            cart[indexCarrito].cantidad = cart[indexCarrito].cantidad + cantidadAgregada;
-            console.log(cart);
-            console.log("estoy modificando la cantidad del carrito");
+            cart[indexCarrito].cantidad += cantidadAgregada;
             setContador(contador + cantidadAgregada);
         }else {
             cart.push(item);
             setCart(cart);
-            console.log(cart);
-            console.log("estoy seteando el carrito por primera vez");
             setIsCartVacio(false);
         }
     }
@@ -56,9 +53,9 @@ export const CartProvider = ({children}) => {
         })
         return total;
     }
-    
+
     const setearContador = () => {
-        
+
         if (cart.length>0) {
             let cartReduce= cart.reduce((acc, el) => acc + el.cantidad, 0);
             setContador(cartReduce);

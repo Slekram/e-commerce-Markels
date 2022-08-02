@@ -40,7 +40,7 @@ export async function getItem (id) {
     return(dataProducts);
 }
 
-export const getOrden = (carrito) => {
+export const setOrden = (carrito) => {
     const ordenesCollection = collection(db, "ordenes");
     addDoc(ordenesCollection, carrito).then(({id})=>alert(`Su numero de orden es ${id}`));
 }

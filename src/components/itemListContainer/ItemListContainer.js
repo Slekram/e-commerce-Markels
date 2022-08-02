@@ -1,8 +1,8 @@
 import "./ItemListContainer.css";
-import ItemList from "../itemList/ItemList.js";
+import ItemList from "../ItemList/ItemList.js";
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-import { getProducts } from "../../services/Firestore";
+import { getProducts } from "../../services/firestore";
 
 const ItemListContainer = ({nombre}) => {
 
@@ -16,24 +16,9 @@ const ItemListContainer = ({nombre}) => {
             setProductos(data);
             setIsLoading(false);
         })
-        
+
     },[idcategoria])
 
-    // useEffect(()=>{
-    //     const getItem = new Promise ((resolve)=>{
-    //         setTimeout(()=>{
-    //             const myData = idcategoria ? data.filter((item) => item.categoria === idcategoria) : data;
-    //             resolve(myData);
-    //         },2000)
-    //     })
-
-    //     getItem.then((res)=>{
-    //         setProductos(res);
-    //         setIsLoading(false);
-    //     })
-
-    // },[idcategoria ])
-    
     return (
         isLoading ? <h2>CARGANDO...</h2> :
         (

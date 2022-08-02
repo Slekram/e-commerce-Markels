@@ -1,6 +1,6 @@
 import './Header.css';
 import logoReact from "../../assets/img/logo.svg"
-import CartWidget from '../cartWidget/CartWidget';
+import CartWidget from '../CartWidget/CartWidget';
 import {Link} from 'react-router-dom';
 
 function Header() {
@@ -15,10 +15,7 @@ function Header() {
       <nav>
           <ul className='navUl'>
             <li>
-              <Link to='/'>Home</Link>
-            </li>
-            <li>
-              <Link to='/products' key={"products"}>Productos</Link>
+              <Link to='/' key={"products"}>Productos</Link>
             </li>
             <li>
               <Link to='/categoria/A' key={"A"}>A</Link>
