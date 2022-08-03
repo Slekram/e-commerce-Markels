@@ -1,6 +1,11 @@
 
 import { initializeApp } from "firebase/app";
 import {getFirestore, getDocs, collection, query, where, limit, addDoc} from "firebase/firestore"
+import Swal from "sweetalert2";
+import withReactContent from "sweetalert2-react-content";
+
+const MySwal = withReactContent(Swal);
+
 const firebaseConfig = {
     apiKey: "AIzaSyCvEVSYqswsF6BiynP7PCA4_LoV84CMUsM",
     authDomain: "el-mundo-de-maxi.firebaseapp.com",
@@ -40,10 +45,26 @@ export async function getItem (id) {
     return(dataProducts);
 }
 
-export const setOrden = (carrito) => {
+export const setOrden = (orden, comprador) => {
     const ordenesCollection = collection(db, "ordenes");
-    addDoc(ordenesCollection, carrito).then(({id})=>alert(`Su numero de orden es ${id}`));
+    addDoc(ordenesCollection, orden).then(({id})=>MySwal.fire({
+        title: "Compra finalizada",
+        html: (
+                <div>
+                    <span>Felicitaciones: </span>
+                    <br/>
+                    <span>{comprador} ha finalizado su compra con exito</span>
+                    <br/>
+                    <span>Su numero de orden es: {id}</span>
+                    <br/>
+                    <a href="/"><button>Ok</button></a>
+                </div>
+            ),
+        icon: 'success',
+        showConfirmButton: false,
+    }))
 }
+
 
 
 export default db;
