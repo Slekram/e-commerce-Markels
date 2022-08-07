@@ -6,7 +6,7 @@ import { useState } from "react";
 
 const ItemCount = (props) => {
     const [count, setCount] = useState(0);
-    const [stock, setStock] = useState(10);
+    const [stock, setStock] = useState(props.stock);
 
     const sumar = () => {
         if(stock>0){
@@ -36,7 +36,7 @@ const ItemCount = (props) => {
                 icon: 'success',
                 confirmButtonText: 'Ok'
             })
-            props.onSaveData(count);
+            props.onSaveData(count, stock);
             setCount(0);
         }else {
             Swal.fire({
@@ -55,7 +55,6 @@ const ItemCount = (props) => {
                 <p>{count}</p>
                 <button onClick={sumar} className="buttonAdd">+</button>
             </div>
-            <p>Stock: {stock}</p>
             <button onClick={onAdd} >Agregar al carrito</button>
         </div>
     )

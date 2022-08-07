@@ -11,3 +11,32 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+button{
+  color: #fff;
+  background-color: #1e90ff;
+  font-size: 12px;
+  text-decoration: none;
+  font-weight: bold;
+  width: 160px;
+  padding: 20px;
+  border-radius: 5px;
+  text-align: center;
+  text-transform: uppercase;
+  cursor: pointer;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0,1);
+  font-family: "Roboto", sans-serif;
+}
+
+button:hover{
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0,5);
+  transform: scale(1.1);
+}
+
+.danger {
+  background-color: #f44336;
+}
+
+.susses{
+  background-color: #4CAF50;
+}

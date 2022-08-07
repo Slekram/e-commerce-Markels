@@ -1,6 +1,7 @@
 
 import { initializeApp } from "firebase/app";
-import {getFirestore, getDocs, collection, query, where, limit, addDoc} from "firebase/firestore"
+import {getFirestore, getDocs, collection, query, where, addDoc, updateDoc, doc, getDoc} from "firebase/firestore"
+import { cloneElement } from "react";
 import Swal from "sweetalert2";
 import withReactContent from "sweetalert2-react-content";
 
@@ -25,7 +26,7 @@ export async function getProducts (idCategoria) {
     // const productsRef = collection(db,"products") "Esto es para traer una colleccion"
     
     //referencia a la colleccion
-    const productsRef = idCategoria ? query(collection(db,"products"), where("categoria", "==", idCategoria), limit(2)) : query(collection(db,"products"));
+    const productsRef = idCategoria ? query(collection(db,"products"), where("categoria", "==", idCategoria)) : query(collection(db,"products"));
     //leemos el snapshot de los documentos actuales con getDocs
     const docSnapshot = await getDocs(productsRef);
     //recibimos el array "docs" que esta dentro de ese snapshot
@@ -65,6 +66,9 @@ export const setOrden = (orden, comprador) => {
     }))
 }
 
-
+export function setStock (id, stock) {
+    const docRef = doc(db, 'products', id);
+    updateDoc (docRef, {stock: stock});
+}
 
 export default db;
