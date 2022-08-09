@@ -1,3 +1,13 @@
+
+Se trata de un proyecto de E-comerce para el curso de React.js.
+
+Simula una compra completa, modificando el stock en tiempo real, de la base de datos (firestore).
+La app renderiza en tiempo real cambios en las cantidades y en el stock de los productos. Permite filtrar por categoria de productos. Cada producto del itemList lleva a un itemDetail donde se gestionan las cantidades de productos que se agregan al carrito segun stock. Si el producto no existe devuelve una pagina con error. 
+El carrito permite remover items de forma individual o limpiar el carrito entero, gestionando cada opcion las cantidades y stock de los productos. Una vez que s efinaliza la compra, el usuario es llevado a un formulario donde debe completar sus datos para generar la orden de compra (con validacion de mail). Una vez enviado el formulario, la orden es cargada en la base de datos y el usuario recibe un numero de orden (el id de la orden en la base de datos). 
+
+
+---------------------------------------------------------------------------------------------------------------------------
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
