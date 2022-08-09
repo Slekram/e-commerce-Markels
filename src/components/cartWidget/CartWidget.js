@@ -5,12 +5,10 @@ import { useCartContext } from '../../contexts/cart-context';
 
 const CartWidget = () => {
   const cartCtx = useCartContext();
-  
-
 
   return (
-    <Link className='containerWidget' to="/cart">
-      <img className='buttonCart' src={carritoLogo} alt='Carrito'></img>
+    <Link className='container-widget' to="/cart">
+      <img className='button-cart' src={carritoLogo} alt='Carrito'></img>
       <div>{cartCtx.contador}</div>
     </Link>
   )

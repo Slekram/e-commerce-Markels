@@ -10,8 +10,8 @@ function App() {
       <div className="App">
         <Header/>
         <Routes>
-          <Route path='/' element={<ItemListContainer nombre={"USUARIO"}/>}></Route>
-          <Route path='/categoria/:idcategoria' element={<ItemListContainer nombre={"FILTRADO"}/>}></Route>
+          <Route path='/' element={<ItemListContainer filtrado={"actual"}/>}></Route>
+          <Route path='/categoria/:idcategoria' element={<ItemListContainer filtrado={"filtrado por categoria"}/>}></Route>
           <Route path='/item/:iditem' element={<ItemDetailContainer/>}></Route>
           <Route path='/cart' element={<Cart></Cart>}></Route>
           <Route path='/orden' element={<Orden></Orden>}></Route>

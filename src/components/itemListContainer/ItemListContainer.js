@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { getProducts } from "../../services/firestore";
 
-const ItemListContainer = ({nombre}) => {
+const ItemListContainer = ({filtrado}) => {
 
     const [productos, setProductos] = useState([])
     const [isLoading, setIsLoading] = useState(true)
@@ -20,11 +20,11 @@ const ItemListContainer = ({nombre}) => {
     },[idcategoria])
 
     return (
-        isLoading ? <h2>CARGANDO...</h2> :
+        isLoading ? <div className="is-loading"><h2>CARGANDO...</h2></div>:
         (
-            <section className="ItemListContainer">
+            <section className="item-list-container">
                 <h2>Catalogo de Productos</h2>
-                <p>Bienvenido {nombre}, este es nuestro catalogo actual de productos</p>
+                <p>Bienvenido USUARIO, este es nuestro catalogo {filtrado} de productos</p>
                 <ItemList
                     productos={productos}
                 />

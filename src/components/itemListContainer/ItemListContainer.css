@@ -1,4 +1,4 @@
-.ItemListContainer{
+.item-list-container{
     background-color:grey;
     display: flex;
     flex-direction: column;

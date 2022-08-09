@@ -1,20 +1,28 @@
 .botonera{
     display:flex;
-    flex-direction: column;
+    flex-direction: row;
     margin-left: 10px;
+    align-items: center;
+}
+
+.botonera button{
+    width: 150px;
+    height: 60px;
 }
 
 .count {
     display: flex;
-    background-color: antiquewhite;
+    background-color: #fff;
     height: fit-content;
     align-items: stretch;
     justify-content: space-between;
+    margin-right: 10px;
+    align-items: center;
 
 }
 
 .count p{
-    width: 100px;
+    width: 50px;
     border:none;
     text-align:center;
     caret-color: transparent;
@@ -26,16 +34,11 @@
 .count button{
     border:1px solid blue;
     background:blue;
-    color:white;
+    color:#fff;
+    width: 30px;
 }
 
-.botonera p{
-    text-align: center;
-}
 
-.botonera button{
-    
-}
 
 
 

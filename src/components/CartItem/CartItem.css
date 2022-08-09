@@ -1,4 +1,4 @@
-.itemContainer{
+.item-cart-container{
     display: flex;
     justify-content: center;
     background-color: black;
@@ -8,17 +8,17 @@
     margin-bottom: 10px;
 }
 
-.imgItemContainer{
+.img-item-container{
     width: 300px;
     height: 200px;
 }
 
-.imgItemContainer img {
+.img-item-container img {
     width: 300px;
     height: 200px;
 }
 
-.containerItemDescripcion{
+.container-item-descripcion{
     display: flex;
     flex-direction: column;
     justify-content: space-around;

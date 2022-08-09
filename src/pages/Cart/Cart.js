@@ -8,6 +8,7 @@ const Cart = () => {
     const cartCtx = useCartContext();
 
     const limpiarCarrito = () =>{
+        cartCtx.limpiarStock();
         cartCtx.clearItem();
     }
 

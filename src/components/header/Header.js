@@ -6,14 +6,14 @@ import {Link} from 'react-router-dom';
 function Header() {
   return (
     <header className="header">
-      <div className='divLogo'>
+      <div className='div-logo'>
           
           <Link to="/"><img src={logoReact} className="logo" width="100px" alt="Logo react"></img></Link>
           <h1>El mundo de Maxi</h1>
           
       </div>
       <nav>
-          <ul className='navUl'>
+          <ul className='nav-ul'>
             <li>
               <Link to='/' key={"products"}>Productos</Link>
             </li>

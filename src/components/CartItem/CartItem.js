@@ -9,18 +9,20 @@ const CartItem = ({stock, producto, cantidad, id, img, precio, subtotal}) => {
 
     const remover = (id) =>{
         let recibirStock= cartCtx.removeItem(id);
-        let restablecerStock= recibirStock + stock
+        console.log(recibirStock);
+        console.log(stock);
+        let restablecerStock= recibirStock + stock;
         console.log(restablecerStock);
         setStock(id, restablecerStock);
         cartCtx.setearContador();
     }
 
     return (
-        <div className="itemContainer">
-            <div className="imgItemContainer">
+        <div className="item-cart-container">
+            <div className="img-item-container">
                 <img src={img} alt={producto}></img>
             </div>
-            <div className="containerItemDescripcion">
+            <div className="container-item-descripcion">
                 <span>Producto: {producto}</span>
                 <span>Precio unitario: {precio} $</span>
                 <span>Cantidad: {cantidad}</span>

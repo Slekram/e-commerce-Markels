@@ -40,3 +40,20 @@ button:hover{
 .susses{
   background-color: #4CAF50;
 }
+
+.is-loading{
+  background-color: black;
+  color: #fff;
+  text-align: center;
+}
+
+.orden-finalizada{
+  display: flex;
+  flex-direction: column;
+}
+
+.orden-finalizada button{
+  width: 70px;
+  height: 40px;
+  transform: scale(1.0);
+}

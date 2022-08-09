@@ -1,7 +1,6 @@
 
 import { initializeApp } from "firebase/app";
-import {getFirestore, getDocs, collection, query, where, addDoc, updateDoc, doc, getDoc} from "firebase/firestore"
-import { cloneElement } from "react";
+import {getFirestore, getDocs, collection, query, where, addDoc, updateDoc, doc} from "firebase/firestore"
 import Swal from "sweetalert2";
 import withReactContent from "sweetalert2-react-content";
 
@@ -39,10 +38,13 @@ export async function getProducts (idCategoria) {
 
 export async function getItem (id) {
     const productsColleccion = query(collection(db,"products"), where("id", "==", id));
-    const docSnapshot = await getDocs(productsColleccion)
+   
+    const docSnapshot = await getDocs(productsColleccion);
+
     const dataProducts = docSnapshot.docs.map(item => {
         return item.data();
     })
+    
     return(dataProducts);
 }
 
@@ -51,12 +53,14 @@ export const setOrden = (orden, comprador) => {
     addDoc(ordenesCollection, orden).then(({id})=>MySwal.fire({
         title: "Compra finalizada",
         html: (
-                <div>
+                <div className="orden-finalizada">
                     <span>Felicitaciones: </span>
                     <br/>
-                    <span>{comprador} ha finalizado su compra con exito</span>
+                    <span>{comprador} </span>
+                    <span>ha finalizado su compra con exito</span>
                     <br/>
-                    <span>Su numero de orden es: {id}</span>
+                    <span>Su numero de orden es: </span>
+                    <span>{id}</span>
                     <br/>
                     <a href="/"><button>Ok</button></a>
                 </div>

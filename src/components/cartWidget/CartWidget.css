@@ -1,4 +1,4 @@
-.containerWidget{
+.container-widget{
     display: flex;
     padding: 9px 25px;
     background-color: rgba(0, 136, 139, 1);
@@ -9,12 +9,9 @@
     color: beige;
 }
 
-.buttonCart{
-    /* padding: 9px 25px; */
+.button-cart{
     background-color: rgba(0, 136, 139, 1);
     border: none;
-    /* border-radius: 50px;
-    cursor: pointer; */
     text-decoration: none;
     color: beige;
 }
