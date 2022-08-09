@@ -14,18 +14,17 @@ export const CartProvider = ({children}) => {
     const [contadorItem, setContadorItem] = useState (0);
     const [isCartVacio, setIsCartVacio] = useState(true);
     
+    //Setea el contador del itemDetail por cada producto.
     const setearContadorItems = (id) => {
         let items = cart.findIndex ((el) => el.id === id);
-        console.log(items);
         if (items>=0){
             setContadorItem (cart[items].cantidad);
-            console.log(contadorItem);
         }else{
             setContadorItem (0);
-            console.log(contadorItem);
         }
     }
 
+    //Se encarga de agregar los productos al carrito, si esta repetido solo aumenta su cantidad.
     const addItem = (item, stock) => {
         const idBuscado = item.id;
         const cantidadAgregada = item.cantidad;
@@ -43,6 +42,7 @@ export const CartProvider = ({children}) => {
         }
     }
 
+    //Funcion que remueve un item particular del carrito y tambien se ve implicada en devolver su stock.
     const removeItem = (idItem) => {
         let findIndexCarrito = cart.findIndex((el) => el.id === idItem);
         let devolverStock = cart[findIndexCarrito].cantidad;
@@ -54,12 +54,14 @@ export const CartProvider = ({children}) => {
         return devolverStock;
     }
 
+    //Borra todo el carrito
     const clearItem = () => {
         setCart ([]);
         setIsCartVacio(true);
         setContador(0);
     }
 
+    //Consigue el valor total de la compra
     const getTotal = () => {
         let subtotal = 0;
         let total = 0;
@@ -70,6 +72,7 @@ export const CartProvider = ({children}) => {
         return total;
     }
 
+    //Al finalizar la compra devuelve el stock a la base de datos para que se pueda simular numerosas veces.
     const finalizarCompra = () => {
         cart.forEach((el)=>{
             let id = el.id;
@@ -77,6 +80,7 @@ export const CartProvider = ({children}) => {
         })
     }
 
+    //Devuelve stock de todos los productos que s eencuentran en el carrito cuando este es vaciado por completo.
     const limpiarStock = () => {
         cart.forEach((el)=>{
             let stockActualizado = el.stockRestante + el.cantidad;
@@ -85,6 +89,7 @@ export const CartProvider = ({children}) => {
         })
     }
 
+    //Se ve implicado en setear el contador del widget.
     const setearContador = () => {
 
         if (cart.length>0) {
